@@ -1,0 +1,39 @@
+{
+  "name": "expand-region",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "description": "expanding selection",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-text-editor": [
+      "expand-region:expand",
+      "expand-region:shrink",
+      "expand-region:select-scope",
+      "expand-region:select-inside-paragraph",
+      "expand-region:select-inside-single-quotes",
+      "expand-region:select-inside-double-quotes",
+      "expand-region:select-inside-back-ticks",
+      "expand-region:select-inside-parentheses",
+      "expand-region:select-inside-curly-brackets",
+      "expand-region:select-inside-angle-brackets",
+      "expand-region:select-inside-square-brackets",
+      "expand-region:select-inside-tags",
+      "expand-region:select-around-single-quotes",
+      "expand-region:select-around-double-quotes",
+      "expand-region:select-around-back-ticks",
+      "expand-region:select-around-parentheses",
+      "expand-region:select-around-curly-brackets",
+      "expand-region:select-around-angle-brackets",
+      "expand-region:select-around-square-brackets"
+    ]
+  },
+  "repository": "https://github.com/aki77/atom-expand-region",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {
+    "underscore": "~1.6.0"
+  }
+}
