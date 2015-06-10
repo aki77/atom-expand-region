@@ -1,6 +1,7 @@
 # expand-region package
 
 expanding selection
+[![Build Status](https://travis-ci.org/aki77/atom-expand-region.svg)](https://travis-ci.org/aki77/atom-expand-region)
 
 [![Gyazo](http://i.gyazo.com/acc77c9b51c45abf90a48156ed434ced.gif)](http://gyazo.com/acc77c9b51c45abf90a48156ed434ced)
 
