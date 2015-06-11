@@ -6,8 +6,8 @@
         recursive: false
       }
       {
-        command: 'core:select-all'
-        recursive: false
+        command: 'expand-region:select-fold'
+        recursive: true
       }
       {
         command: 'expand-region:select-inside-paragraph'
@@ -62,8 +62,8 @@
         recursive: false
       }
       {
-        command: 'core:select-all'
-        recursive: false
+        command: 'expand-region:select-fold'
+        recursive: true
       }
       {
         command: 'expand-region:select-inside-single-quotes'

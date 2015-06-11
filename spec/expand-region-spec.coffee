@@ -41,6 +41,9 @@ describe "ExpandRegion", ->
         expect(editor.getSelectedText()).toBe('((arg1 + arg2) * arg1)')
 
         atom.commands.dispatch editorElement, 'expand-region:expand'
+        expect(editor.getSelectedScreenRange()).toEqual [[2, 0], [3, 33]]
+
+        atom.commands.dispatch editorElement, 'expand-region:expand'
         expect(editor.getSelectedScreenRange()).toEqual [[2, 0], [4, 0]]
 
         atom.commands.dispatch editorElement, 'expand-region:expand'
@@ -50,7 +53,7 @@ describe "ExpandRegion", ->
         expect(editor.getSelectedScreenRange()).toEqual [[0, 7], [8, 1]]
 
         atom.commands.dispatch editorElement, 'expand-region:expand'
-        expect(editor.getSelectedScreenRange()).toEqual [[0, 0], [9, 0]]
+        expect(editor.getSelectedScreenRange()).toEqual [[0, 0], [6, 33]]
 
     it 'shrink selection', ->
       atom.commands.dispatch editorElement, 'expand-region:expand'
@@ -59,9 +62,9 @@ describe "ExpandRegion", ->
         activationPromise
 
       runs ->
-        for i in [0..7]
+        for i in [0..8]
           atom.commands.dispatch editorElement, 'expand-region:expand'
-        expect(editor.getSelectedScreenRange()).toEqual [[0, 0], [9, 0]]
+        expect(editor.getSelectedScreenRange()).toEqual [[0, 0], [6, 33]]
 
         atom.commands.dispatch editorElement, 'expand-region:shrink'
         expect(editor.getSelectedScreenRange()).toEqual [[0, 7], [8, 1]]
@@ -71,6 +74,9 @@ describe "ExpandRegion", ->
 
         atom.commands.dispatch editorElement, 'expand-region:shrink'
         expect(editor.getSelectedScreenRange()).toEqual [[2, 0], [4, 0]]
+
+        atom.commands.dispatch editorElement, 'expand-region:shrink'
+        expect(editor.getSelectedScreenRange()).toEqual [[2, 0], [3, 33]]
 
         atom.commands.dispatch editorElement, 'expand-region:shrink'
         expect(editor.getSelectedText()).toBe('((arg1 + arg2) * arg1)')
@@ -113,6 +119,10 @@ describe "ExpandRegion", ->
         [[6, 4], [6, 26]]
       ]
       [
+        [[2, 0], [3, 33]]
+        [[5, 0], [6, 33]]
+      ]
+      [
         [[2, 0], [4, 0]]
         [[5, 0], [7, 0]]
       ]
@@ -123,10 +133,10 @@ describe "ExpandRegion", ->
         [[0, 7], [8, 1]]
       ]
       [
-        [[0, 0], [9, 0]]
+        [[0, 0], [6, 33]]
       ]
     ]
-    
+
     beforeEach ->
       editor.setCursorScreenPosition([3, 15])
 

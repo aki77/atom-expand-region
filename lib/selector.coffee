@@ -1,3 +1,5 @@
+{Range} = require 'atom'
+
 module.exports =
 class Selector
 
@@ -23,6 +25,21 @@ class Selector
 
       if scopeRange?.containsRange(selectionRange) and not scopeRange?.isEqual(selectionRange)
         selection.setBufferRange(scopeRange)
+        return
+
+  @selectFold = (selection) ->
+    selectionRange = selection.getBufferRange()
+    {editor} = selection
+    {languageMode} = editor
+
+    for currentRow in [selectionRange.start.row..0]
+      [startRow, endRow] = languageMode.rowRangeForFoldAtBufferRow(currentRow) ? []
+      continue unless startRow?
+      continue unless startRow <= selectionRange.start.row and selectionRange.end.row <= endRow
+      foldRange = new Range([startRow, 0], [endRow, editor.lineTextForBufferRow(endRow).length])
+
+      if foldRange?.containsRange(selectionRange) and not foldRange?.isEqual(selectionRange)
+        selection.setBufferRange(foldRange)
         return
 
   @selectInsideParagraph = (selection) ->

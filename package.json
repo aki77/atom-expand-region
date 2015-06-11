@@ -9,6 +9,7 @@
       "expand-region:expand",
       "expand-region:shrink",
       "expand-region:select-scope",
+      "expand-region:select-fold",
       "expand-region:select-inside-paragraph",
       "expand-region:select-inside-single-quotes",
       "expand-region:select-inside-double-quotes",
