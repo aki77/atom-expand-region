@@ -33,8 +33,8 @@ edit `~/.atom/config.cson`
         recursive: false
       }
       {
-        command: 'core:select-all'
-        recursive: false
+        command: 'expand-region:select-fold'
+        recursive: true
       }
       {
         command: 'expand-region:select-inside-paragraph'
@@ -89,8 +89,8 @@ edit `~/.atom/config.cson`
         recursive: false
       }
       {
-        command: 'core:select-all'
-        recursive: false
+        command: 'expand-region:select-fold'
+        recursive: true
       }
       {
         command: 'expand-region:select-inside-single-quotes'
@@ -117,5 +117,4 @@ edit `~/.atom/config.cson`
         recursive: false
       }
     ]
-
 ```
