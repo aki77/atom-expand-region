@@ -1,3 +1,6 @@
+## 0.2.1
+* Add source.css settings
+
 ## 0.2.0
 * Fix autoscroll
 * Add expand-region:select-fold

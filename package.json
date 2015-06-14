@@ -3,7 +3,9 @@
   "main": "./lib/main",
   "version": "0.2.0",
   "description": "expanding selection",
-  "keywords": [],
+  "keywords": [
+    "selection"
+  ],
   "activationCommands": {
     "atom-text-editor": [
       "expand-region:expand",
