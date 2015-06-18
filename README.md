@@ -7,6 +7,11 @@ expanding selection
 
 Inspired by [vim-expand-region](https://github.com/terryma/vim-expand-region)
 
+## Features
+
+* Support for multiple cursors.
+* You can easily customize.
+
 ## Keymap
 
 No keymap by default.

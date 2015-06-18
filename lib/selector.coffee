@@ -1,3 +1,4 @@
+_ = require 'underscore-plus'
 {Range} = require 'atom'
 
 module.exports =
@@ -11,6 +12,16 @@ class Selector
     editor.expandSelectionsForward((selection) =>
       @[method](selection, args...)
     )
+
+  @selectWord = (selection, includeCharacters = []) ->
+    nonWordCharacters = atom.config.get('editor.nonWordCharacters', scope: selection.cursor.getScopeDescriptor())
+    for char in includeCharacters
+      nonWordCharacters = nonWordCharacters.replace(char, '')
+    wordRegex = new RegExp("[^\\s#{_.escapeRegExp(nonWordCharacters)}]+", "g")
+    options = {wordRegex, includeNonWordCharacters: false}
+    selection.setBufferRange(selection.cursor.getCurrentWordBufferRange(options))
+    selection.wordwise = true
+    selection.initialScreenRange = selection.getScreenRange()
 
   @selectScope = (selection) ->
     scopes = selection.cursor.getScopeDescriptor().getScopesArray()

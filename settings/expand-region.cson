@@ -6,6 +6,14 @@
         recursive: false
       }
       {
+        command: 'expand-region:select-word-include-dash',
+        recursive: false
+      }
+      {
+        command: 'expand-region:select-word-include-dash-and-dot',
+        recursive: false
+      }
+      {
         command: 'expand-region:select-fold'
         recursive: true
       }
@@ -95,6 +103,10 @@
     commands: [
       {
         command: 'editor:select-word'
+        recursive: false
+      }
+      {
+        command: 'expand-region:select-word-include-dash',
         recursive: false
       }
       {

@@ -25,6 +25,8 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-text-editor',
       'expand-region:expand': @expandRegion.expand
       'expand-region:shrink': @expandRegion.shrink
+      'expand-region:select-word-include-dash': (event) -> Selector.select(event, 'Word', ['-'])
+      'expand-region:select-word-include-dash-and-dot': (event) -> Selector.select(event, 'Word', ['-', '.'])
       'expand-region:select-scope': (event) -> Selector.select(event, 'Scope')
       'expand-region:select-fold': (event) -> Selector.select(event, 'Fold')
       'expand-region:select-inside-paragraph': (event) -> Selector.select(event, 'InsideParagraph')

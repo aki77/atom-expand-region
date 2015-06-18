@@ -12,6 +12,8 @@
       "expand-region:shrink",
       "expand-region:select-scope",
       "expand-region:select-fold",
+      "expand-region:select-word-include-dash",
+      "expand-region:select-word-include-dash-and-dot",
       "expand-region:select-inside-paragraph",
       "expand-region:select-inside-single-quotes",
       "expand-region:select-inside-double-quotes",
@@ -36,6 +38,6 @@
     "atom": ">=0.174.0 <2.0.0"
   },
   "dependencies": {
-    "underscore": "~1.6.0"
+    "underscore-plus": "~1.6.6"
   }
 }

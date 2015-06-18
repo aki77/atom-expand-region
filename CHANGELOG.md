@@ -1,3 +1,8 @@
+## 0.2.2
+* Add expand-region:select-word-include-dash
+* Add expand-region:select-word-include-dash-and-dot
+* Update default settings
+
 ## 0.2.1
 * Add source.css settings
 
