@@ -1,3 +1,6 @@
+## 0.2.3
+* Fixed #1
+
 ## 0.2.2
 * Add expand-region:select-word-include-dash
 * Add expand-region:select-word-include-dash-and-dot

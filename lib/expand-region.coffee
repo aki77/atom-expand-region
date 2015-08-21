@@ -10,7 +10,7 @@ class ExpandRegion
   lastEditor: null
 
   expand: (event) =>
-    @editorElement = event.target
+    @editorElement = event.currentTarget
     @editor = @editorElement.getModel()
 
     @candidates = @computeCandidates() unless @isActive()
@@ -29,7 +29,7 @@ class ExpandRegion
     return
 
   shrink: (event) =>
-    @editorElement = event.target
+    @editorElement = event.currentTarget
     @editor = @editorElement.getModel()
     return unless @isActive()
     return if @currentIndex is 0
