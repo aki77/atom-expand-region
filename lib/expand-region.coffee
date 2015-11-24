@@ -110,7 +110,7 @@ class ExpandRegion
     for selection in @editor.getSelections()
       state.set(selection, selection.getBufferRange())
 
-    scrollTop = @editor.getScrollTop()
+    scrollTop = @editorElement.getScrollTop()
 
     @editor.transact =>
       atom.commands.dispatch(@editorElement, command)
@@ -131,7 +131,7 @@ class ExpandRegion
           for selection in @editor.getSelections()
             results[state.get(selection)].push(selection.getBufferRange())
 
-      @editor.setScrollTop(scrollTop) if @editor.getScrollTop() isnt scrollTop
+      @editorElement.setScrollTop(scrollTop) if @editorElement.getScrollTop() isnt scrollTop
       @editor.abortTransaction()
 
     # restore
