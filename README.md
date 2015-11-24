@@ -26,6 +26,22 @@ edit `~/.atom/keymap.cson`
 
 ## Customize selected regions
 
-edit `~/.atom/config.cson`
+Follow [the Atom guide](https://atom.io/docs/latest/using-atom-basic-customization#language-specific-settings-in-your-config-file) on language-specific configuration to adjust how regions are selected per language. Edit `~/.atom/config.cson` and use the [default settings](https://github.com/aki77/atom-expand-region/blob/master/settings/expand-region.cson) as a reference.
 
-[default settings](https://github.com/aki77/atom-expand-region/blob/master/settings/expand-region.cson)
+For example, if you want to select words with dashes first in CSS (instead of words without dashes), you could change your `config.cson` to something like:
+
+```cson
+'.source.css':
+  'expand-region':
+    commands: [
+      # Note how `expand-region:select-word` is no longer here 
+      # like it is in the defaults
+      {
+        command: 'expand-region:select-word-include-dash',
+        recursive: false
+      }
+      # etc...
+    ]
+```
+
+And now if you expanded while your cursor was—for example—between `x` and `t` in `text-align`, rather than selecting `text` first, you'd select the whole `text-align` property.
