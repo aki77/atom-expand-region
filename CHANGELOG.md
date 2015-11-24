@@ -1,3 +1,7 @@
+## 0.2.4
+* Expound on how to customize selected regions(@stevenhauser)
+* Fix deprecated calls
+
 ## 0.2.3
 * Fixed #1
 
