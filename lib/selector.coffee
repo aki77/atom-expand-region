@@ -72,7 +72,7 @@ class Selector
               if isStartQuote(pos)
                 return pos
               else
-                return lookForwardOnLine(start)
+                return lookBackwardOnLine(start) or lookForwardOnLine(start)
           -- pos.column
         pos.column = -1
         -- pos.row
@@ -89,6 +89,15 @@ class Selector
       index = line.substring(pos.column).indexOf(char)
       if index >= 0
         pos.column += index
+        return pos
+      null
+
+    lookBackwardOnLine = (pos) ->
+      line = editor.lineTextForBufferRow(pos.row).substring(0,pos.column)
+
+      index = line.lastIndexOf(char)
+      if index >= 0
+        pos.column += index - line.length
         return pos
       null
 
