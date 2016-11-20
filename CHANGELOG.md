@@ -1,3 +1,6 @@
+## 0.2.6
+* Add source.js settings
+
 ## 0.2.5
 * Fix select inside quote w/ cursor just before end quote(@rahatarmanahmed)
 
