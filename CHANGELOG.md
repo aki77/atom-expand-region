@@ -1,3 +1,6 @@
+## 0.2.7
+* Remove deprecated displayBuffer references
+
 ## 0.2.6
 * Add source.js settings
 

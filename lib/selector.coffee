@@ -32,7 +32,7 @@ class Selector
     {editor} = selection
 
     for scope in scopes
-      scopeRange = editor.displayBuffer.bufferRangeForScopeAtPosition(scope, selection.cursor.getBufferPosition())
+      scopeRange = editor.bufferRangeForScopeAtPosition(scope, selection.cursor.getBufferPosition())
 
       if scopeRange?.containsRange(selectionRange) and not scopeRange?.isEqual(selectionRange)
         selection.setBufferRange(scopeRange)
