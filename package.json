@@ -23,6 +23,7 @@
       "expand-region:select-inside-angle-brackets",
       "expand-region:select-inside-square-brackets",
       "expand-region:select-inside-tags",
+      "expand-region:select-tag-attribute",
       "expand-region:select-around-single-quotes",
       "expand-region:select-around-double-quotes",
       "expand-region:select-around-back-ticks",

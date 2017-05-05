@@ -60,11 +60,8 @@ class ExpandRegion
     @currentIndex = 0
     candidates = new Map
 
-    scopeDescriptor = @editor.getRootScopeDescriptor()
-    commands = atom.config.get('expand-region.commands', scope: scopeDescriptor)
-
     results = {}
-    for {command, recursive} in commands
+    for {command, recursive} in @getCommands()
       for selectionRange, ranges of @computeRanges(command, recursive)
         results[selectionRange] = [] unless results[selectionRange]?
         results[selectionRange].push(ranges...)
@@ -143,3 +140,9 @@ class ExpandRegion
     )
 
     results
+
+  getCommands: ->
+    scopeDescriptor = @editor.getRootScopeDescriptor()
+    commands = atom.config.get('expand-region.commands', scope: scopeDescriptor)
+    {registeredCommands} = atom.commands
+    commands.filter(({command}) -> registeredCommands[command])

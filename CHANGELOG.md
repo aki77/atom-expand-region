@@ -1,3 +1,7 @@
+## 0.3.0
+* Add expand-region:select-tag-attribute
+* Support emmet
+
 ## 0.2.8
 * Add source.jsx settings
 

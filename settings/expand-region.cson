@@ -70,7 +70,7 @@
         recursive: false
       }
       {
-        command: 'expand-region:select-fold'
+        command: 'emmet:balance-outward'
         recursive: true
       }
       {
@@ -95,6 +95,10 @@
       }
       {
         command: 'expand-region:select-around-angle-brackets'
+        recursive: false
+      }
+      {
+        command: 'expand-region:select-tag-attribute'
         recursive: false
       }
     ]
@@ -230,15 +234,15 @@
         recursive: false
       }
       {
+        command: 'emmet:balance-outward'
+        recursive: true
+      }
+      {
         command: 'expand-region:select-word-include-dash',
         recursive: false
       }
       {
         command: 'expand-region:select-word-include-dash-and-dot',
-        recursive: false
-      }
-      {
-        command: 'expand-region:select-inside-tags'
         recursive: false
       }
       {
