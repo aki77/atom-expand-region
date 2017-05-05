@@ -11,6 +11,7 @@ Inspired by [vim-expand-region](https://github.com/terryma/vim-expand-region)
 
 * Support for multiple cursors.
 * You can easily customize.
+* Support for html tags.([emmet](https://atom.io/packages/emmet) package is required.)
 
 ## Keymap
 
@@ -34,7 +35,7 @@ For example, if you want to select words with dashes first in CSS (instead of wo
 '.source.css':
   'expand-region':
     commands: [
-      # Note how `expand-region:select-word` is no longer here 
+      # Note how `expand-region:select-word` is no longer here
       # like it is in the defaults
       {
         command: 'expand-region:select-word-include-dash',
