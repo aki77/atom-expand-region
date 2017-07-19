@@ -27,7 +27,7 @@ edit `~/.atom/keymap.cson`
 
 ## Customize selected regions
 
-Follow [the Atom guide](https://atom.io/docs/latest/using-atom-basic-customization#language-specific-settings-in-your-config-file) on language-specific configuration to adjust how regions are selected per language. Edit `~/.atom/config.cson` and use the [default settings](https://github.com/aki77/atom-expand-region/blob/master/settings/expand-region.cson) as a reference.
+Follow [the Atom guide](http://flight-manual.atom.io/behind-atom/sections/scoped-settings-scopes-and-scope-descriptors) on language-specific configuration to adjust how regions are selected per language. Edit `~/.atom/config.cson` and use the [default settings](https://github.com/aki77/atom-expand-region/blob/master/settings/expand-region.cson) as a reference.
 
 For example, if you want to select words with dashes first in CSS (instead of words without dashes), you could change your `config.cson` to something like:
 
