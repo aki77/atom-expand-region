@@ -1,3 +1,6 @@
+## 0.3.1
+* Fix link(@daiyi)
+
 ## 0.3.0
 * Add expand-region:select-tag-attribute
 * Support emmet
