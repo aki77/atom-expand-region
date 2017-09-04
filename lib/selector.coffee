@@ -5,7 +5,7 @@ module.exports =
 class Selector
 
   @select: (event, type, args...) ->
-    editor = event.target.getModel?()
+    editor = event.currentTarget.getModel?()
     return unless editor
 
     method = "select#{type}"
