@@ -1,5 +1,5 @@
 _ = require 'underscore-plus'
-{Range} = require 'atom'
+{Range, Point} = require 'atom'
 
 module.exports =
 class Selector
@@ -44,11 +44,8 @@ class Selector
     {languageMode} = editor
 
     for currentRow in [selectionRange.start.row..0]
-      [startRow, endRow] = languageMode.rowRangeForFoldAtBufferRow(currentRow) ? []
-      continue unless startRow?
-      continue unless startRow <= selectionRange.start.row and selectionRange.end.row <= endRow
-      foldRange = new Range([startRow, 0], [endRow, editor.lineTextForBufferRow(endRow).length])
-
+      foldRange = editor.tokenizedBuffer.getFoldableRangeContainingPoint(Point(currentRow, Infinity))
+      continue unless foldRange?
       if foldRange?.containsRange(selectionRange) and not foldRange?.isEqual(selectionRange)
         selection.setBufferRange(foldRange)
         return

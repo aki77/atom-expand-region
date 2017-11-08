@@ -1,3 +1,6 @@
+## 0.4.0
+* Support for Atom v1.22 (Temporary solution)
+
 ## 0.3.2
 * Fix bug(#26, #28)
 
