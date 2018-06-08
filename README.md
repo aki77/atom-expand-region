@@ -46,3 +46,7 @@ For example, if you want to select words with dashes first in CSS (instead of wo
 ```
 
 And now if you expanded while your cursor was—for example—between `x` and `t` in `text-align`, rather than selecting `text` first, you'd select the whole `text-align` property.
+
+Other custom configs for inspiration: 
+
+- [jsx](https://github.com/aki77/atom-expand-region/issues/21#issuecomment-299348050)
