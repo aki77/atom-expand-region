@@ -39,13 +39,15 @@ class Selector
         return
 
   @selectFold = (selection) ->
+    # SEE: https://github.com/atom/atom/blob/d36c102ca09fac19e43e64050ec722200829f8d5/src/text-editor.js#L4013-L4026
     selectionRange = selection.getBufferRange()
     {editor} = selection
     {languageMode} = editor
 
     for currentRow in [selectionRange.start.row..0]
-      foldRange = editor.tokenizedBuffer.getFoldableRangeContainingPoint(Point(currentRow, Infinity))
-      continue unless foldRange?
+      {start, end} = languageMode.getFoldableRangeContainingPoint(Point(currentRow, Infinity), editor.getTabLength()) || {}
+      continue unless start?
+      foldRange = new Range([start.row, 0], [end.row, editor.lineTextForBufferRow(end.row).length])
       if foldRange?.containsRange(selectionRange) and not foldRange?.isEqual(selectionRange)
         selection.setBufferRange(foldRange)
         return
