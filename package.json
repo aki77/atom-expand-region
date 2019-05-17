@@ -1,7 +1,7 @@
 {
   "name": "expand-region",
   "main": "./lib/main",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "expanding selection",
   "keywords": [
     "selection"
