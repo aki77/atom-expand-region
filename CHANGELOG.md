@@ -1,3 +1,7 @@
+## 0.5.0
+
+- Support for Atom v1.37.0-beta
+
 ## 0.4.2
 
 - Fix expand-region:select-fold

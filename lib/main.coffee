@@ -8,7 +8,68 @@ module.exports =
   config:
     commands:
       type: 'array'
-      default: []
+      default: [
+        {
+          command: 'editor:select-word'
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-word-include-dash',
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-word-include-dash-and-dot',
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-fold'
+          recursive: true
+        }
+        {
+          command: 'expand-region:select-inside-paragraph'
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-inside-single-quotes'
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-around-single-quotes'
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-inside-double-quotes'
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-around-double-quotes'
+          recursive: false
+        }
+        {
+          command: 'expand-region:select-inside-parentheses'
+          recursive: true
+        }
+        {
+          command: 'expand-region:select-around-parentheses'
+          recursive: true
+        }
+        {
+          command: 'expand-region:select-inside-curly-brackets'
+          recursive: true
+        }
+        {
+          command: 'expand-region:select-around-curly-brackets'
+          recursive: true
+        }
+        {
+          command: 'expand-region:select-inside-square-brackets'
+          recursive: true
+        }
+        {
+          command: 'expand-region:select-around-square-brackets'
+          recursive: true
+        }
+      ]
       items:
         type: 'object'
         properties:
